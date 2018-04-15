@@ -1,0 +1,19 @@
+<h1> Share your idea! </h1>
+<ol>
+  <% @idea.errors.full_messages.each do |error| %>
+  <li>Error - <%= error.downcase %>! </li>
+  <% end %>
+</ol>
+<ul>
+  <%= form_for(@idea, url: new_path) do |f| %>
+
+  <li><%= f.label :title %></li>
+  <%= f.text_field :title %>
+
+  <li><%= f.label :body %></li>
+  <%= f.text_area :body, cols: 100, rows: 20 %>
+  <br />
+  <%= f.submit :Submit %>
+  <% end %>
+</ul>
+<%= link_to 'Back', root_path %>

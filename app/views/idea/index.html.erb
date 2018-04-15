@@ -1,0 +1,11 @@
+<h1> Welcome to Bank of Ideas!</h1>
+<h4> <%= link_to 'Share your idea!', new_path %> </h4>
+<h3> Everything we've got:</h3>
+
+  <% @ideas.each do |idea| %>
+
+<p>
+  <%= link_to "#{idea.title}", idea %>
+  <%= idea.created_at.to_s.gsub("UTC", "")%>
+</p>
+  <% end %>

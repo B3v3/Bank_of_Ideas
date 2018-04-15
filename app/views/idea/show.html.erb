@@ -1,0 +1,5 @@
+<h1> <%= @idea.title %> </h1>
+<p> <%= @idea.body %> </p>
+<%= link_to 'Back', root_path %>
+<%= link_to 'Delete', @idea,
+    method: :delete          %>
