@@ -7,9 +7,4 @@ module ApplicationHelper
         page_title
       end
     end
-
-    def error_type(error)
-      error
-    end 
-
 end

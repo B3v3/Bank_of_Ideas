@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  def contact
+  end 
   def show
     @user = User.find_by(name: params[:name])
   end

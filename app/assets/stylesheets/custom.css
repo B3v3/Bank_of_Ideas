@@ -1,19 +1,23 @@
+.error {
+  color: white;
+  background-color: #F5101F
+}
+
+a {
+  color: black
+}
+ol {
+  text-align: justify;
+  margin: 0 auto;
+  width: 30em;
+}
+.footer {
+
+  text-align: right ;
+  size: 10px;
+}
 body {
   background: #ECDBDB;
   font-family: 'Raleway', sans-serif;
   text-align:center
-   }
-
-   .error {
-     color: white;
-     background-color: #F5101F
-   }
-
-   a {
-     color: black
-   }
-   ol {
-     text-align: justify;
-     margin: 0 auto;
-     width: 30em;
    }

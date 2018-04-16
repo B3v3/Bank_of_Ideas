@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'idea#index'
+  get '/contact' => 'users#contact'
 
   get '/new' => 'idea#new'
   post '/new' => 'idea#create'
