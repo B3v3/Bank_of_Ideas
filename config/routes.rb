@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   get "/users/:name" => "users#show", as: 'profile_path'
-  delete '/users/:name' => 'users#destroy'
+
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/users/:name' => 'sessions#destroy', as: 'logout'
 end

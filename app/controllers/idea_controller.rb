@@ -9,11 +9,16 @@ class IdeaController < ApplicationController
   end
 
   def new
+    if logged_in?
     @idea = Idea.new
+  else
+    redirect_to root_path
+  end 
   end
 
   def create
     @idea = Idea.new(idea_params)
+    @idea.user_id = current_user.id
     if @idea.save
       flash[:success]
       redirect_to @idea

@@ -1,5 +1,9 @@
 <h1> <%= @idea.title %> </h1>
+<h5> <%= "By #{@idea.user.name}" %> </h3>
 <p> <%= @idea.body %> </p>
-<%= link_to 'Back', root_path %>
+
+<% if logged_in? && @idea.user.name == current_user.name %>
 <%= link_to 'Delete', @idea,
     method: :delete          %>
+<% end %>
+<%= render 'layouts/back' %>

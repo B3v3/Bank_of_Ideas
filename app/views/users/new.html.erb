@@ -1,9 +1,13 @@
 <h1> Sign up! </h1>
-<ol>
-  <% @user.errors.full_messages.each do |error| %>
-  <li>Error - <%= error.downcase %>! </li>
-  <% end %>
-</ol>
+
+<div class="error">
+  <ol>
+    <% @user.errors.full_messages.each do |error| %>
+    <li>Error - <%= error.downcase %>! </li>
+    <% end %>
+  </ol>
+</div>
+
 <%= form_for(@user, url: signup_path) do |f| %>
 
   <%= f.label :name %><br />
@@ -17,3 +21,4 @@
 
   <%= f.submit :Submit %>
 <% end %>
+<%= render 'layouts/back' %>

@@ -3,7 +3,11 @@ class UsersController < ApplicationController
     @user = User.find_by(name: params[:name])
   end
   def new
+    if logged_in?
+      redirect_to root_path
+    else
     @user = User.new
+  end
   end
   def create
     @user = User.new(user_params)
@@ -15,11 +19,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    @user =  User.find_by(name: params[:name])
-    @user.destroy
-    redirect_to root_path
-  end
+
 
   private
   def user_params

@@ -1,0 +1,19 @@
+<h1> Log in! </h1>
+<% flash.each do |message_type, message| %>
+<%= content_tag(:div, message, class: "#{message_type}") %>
+<% end %>
+<%= form_for(:session, url: login_path) do |f| %>
+
+  <%= f.label :name %><br />
+  <%= f.text_field :name %><br />
+
+  <%= f.label :password %><br />
+  <%= f.password_field :password %><br />
+
+  <%= f.submit "Log in" %>
+
+  <% end %>
+
+  <p> <%= link_to "New user?", signup_path %></p>
+
+<%= render 'layouts/back' %>
