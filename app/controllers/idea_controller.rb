@@ -1,7 +1,7 @@
 class IdeaController < ApplicationController
 
   def index
-    @ideas = Idea.all
+    @ideas = Idea.paginate(:page => params[:page], :per_page => 15)
   end
 
   def show
@@ -13,7 +13,7 @@ class IdeaController < ApplicationController
     @idea = Idea.new
   else
     redirect_to root_path
-  end 
+  end
   end
 
   def create
