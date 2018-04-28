@@ -1,27 +1,21 @@
 <% provide(:title, "Home") %>
- <h1> Welcome to Bank of Ideas
-   <% if logged_in? %>
-   <%= link_to ", #{current_user.name}", profile_path_url(current_user.name) %>
-<% end %>
-!</h1>
+
+ <h1> Welcome to Bank of Ideas<%= link_to ", #{current_user.name}", profile_path_url(current_user.name) if logged_in? %>!</h1>
+
 <% if logged_in? %>
-
 <h4> <%= link_to 'Share your idea!', new_path %> </h4>
-
 <% else %>
-
 <%= link_to "Log in", login_path %>
 <% end %>
 
 <div class="list">
-<h3> Everything we've got:</h3>
-<%= will_paginate @ideas %>
-  <% @ideas.reverse.each do |idea| %>
-</div>
-
-<p>
-  <%= link_to "#{idea.title}", idea %>
-  <%= idea.created_at.to_s.gsub("UTC", "")%>
-  <%= link_to "By #{idea.user.name}", profile_path_url(idea.user.name) %>
-</p>
-  <% end %>
+  <h3> Everything we've got:</h3>
+    <%= will_paginate @ideas %>
+    <% @ideas.reverse.each do |idea| %>
+  </div>
+    <p>
+      <%= link_to "#{idea.title}", idea %>
+      <%= idea.created_at.to_s.gsub("UTC", "")%>
+      <%= link_to "By #{idea.user.name}", profile_path_url(idea.user.name) %>
+    </p>
+<% end %>

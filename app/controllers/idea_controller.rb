@@ -10,10 +10,10 @@ class IdeaController < ApplicationController
 
   def new
     if logged_in?
-    @idea = Idea.new
-  else
-    redirect_to root_path
-  end
+      @idea = Idea.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
